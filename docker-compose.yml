@@ -1,0 +1,36 @@
+version: '2.1'
+
+services:
+  apiclient:
+    container_name: apiclientserver
+    #image: apiclient
+    build: .
+    
+    ports:
+      - 9080:8080
+    links:
+     - appserver
+    
+    depends_on:
+     - appserver
+
+
+  appserver:
+    container_name: appserver12
+    image: eohppserverimage01
+    ports:
+      - "9090:9090"
+    links:
+     - mongo
+    depends_on: 
+     - mongo
+  
+  mongo:
+    container_name: mongoserver12
+    image: mongo
+    ports:
+      - "27017:27017"
+
+
+
+     
