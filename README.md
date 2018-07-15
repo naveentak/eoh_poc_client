@@ -8,6 +8,8 @@
 
 # clone project
 git clone https://naveentak@github.com/naveentak/eoh_poc_client.git
+# cd to eoh_poc_client
+cd eoh_poc_client
 # install dependencies
 npm install vue-resource --save
 
